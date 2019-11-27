@@ -1,0 +1,33 @@
+
+
+<input type="text" [(ngModel)]="name" />
+{{ name }} 
+
+<input type="text" [(ngModel)]="power"/> 
+{{ power | exponencial }} 
+
+<div *ngIf="name === 'nicolas'"> se muestra porque es Nicolas </div>
+
+<button (click)="addItem()"> Agregar un item </button>
+<ul>
+  <li *ngIf="items.length === 0"> La lista se encuentra Vacia </li>
+  <li *ngFor="let item of items; index as i">
+    {{ item }}  {{i}}
+    <button (click)="deleteItems(i)"> Eliminar </button>
+  </li>
+</ul>
+
+<div [(ngSwitch)]= "nombres">
+    <p *ngSwitchCase=" 'sebastian' "> El nombre es Sebastian </p>
+    <p *ngSwitchCase=" 'marcela' "> El Nombre es Marcela </p>
+    <p *ngSwitchCase=" 'pepito' "> El nombre es Pepito </p>
+    <p *ngSwitchDefault> No se encuentra </p>
+  </div>
+<!-- 
+<div *ngFor="let product of  products">
+  {{product.title}}  -->
+  <!-- para modificar un atributo delhtml se emplea llaves cuadras -->
+  <!-- 
+  <img [src]="product.image" alt=""> 
+  {{product.price}}
+-->
